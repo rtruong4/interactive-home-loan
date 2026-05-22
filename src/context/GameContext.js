@@ -5,7 +5,7 @@ const GameContext = createContext(null);
 export function GameProvider({ children, initialScene }) {
   const [scene, setScene] = useState(initialScene);
   const [history, setHistory] = useState([]);
-  const defaultPlayer = { creditScore: null, age: null, monthlyIncome: null, savings: null };
+  const defaultPlayer = { creditScore: null, monthlyIncome: null, savings: null, debtToIncomeRatio: null };
   const [player, setPlayer] = useState(() => {
     try {
       const raw = localStorage.getItem('ihl_player');
@@ -28,7 +28,7 @@ export function GameProvider({ children, initialScene }) {
 
   function restart() {
     setHistory([]);
-    setPlayer({ creditScore: null, age: null, monthlyIncome: null, savings: null });
+    setPlayer({ creditScore: null, monthlyIncome: null, savings: null, debtToIncomeRatio: null });
     setScene(initialScene);
   }
 

@@ -17,8 +17,8 @@ export default function PlayerBanner() {
     <aside className="player-banner">
       <div className="player-info">
         <div><strong>Credit:</strong> {player.creditScore ?? '—'}</div>
-        <div><strong>Age:</strong> {player.age ?? '—'}</div>
         <div><strong>Income:</strong> {player.monthlyIncome != null ? `$${player.monthlyIncome}` : '—'}</div>
+        <div><strong>DTI:</strong> {player.debtToIncomeRatio != null ? `${player.debtToIncomeRatio}%` : '—'}</div>
         <div><strong>Savings:</strong> {player.savings != null ? `$${player.savings}` : '—'}</div>
       </div>
       <div className="player-actions">

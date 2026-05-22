@@ -5,7 +5,7 @@ import { useGame } from '../context/GameContext';
 export default function StartScreen() {
   const { updatePlayer } = useGame();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ creditScore: '', age: '', monthlyIncome: '', savings: '' });
+  const [form, setForm] = useState({ creditScore: '', debtToIncomeRatio: '', monthlyIncome: '', savings: '' });
   const [error, setError] = useState('');
 
   function handleChange(e) {
@@ -16,16 +16,26 @@ export default function StartScreen() {
   function handleSubmit(e) {
     e.preventDefault();
     const creditScore = parseInt(form.creditScore, 10);
-    const age = parseInt(form.age, 10);
+    const debtToIncomeRatio = parseFloat(form.debtToIncomeRatio);
     const monthlyIncome = parseFloat(form.monthlyIncome);
     const savings = parseFloat(form.savings);
 
-    if (Number.isNaN(creditScore) || Number.isNaN(age) || Number.isNaN(monthlyIncome) || Number.isNaN(savings)) {
+    if (
+      Number.isNaN(creditScore) ||
+      Number.isNaN(debtToIncomeRatio) ||
+      Number.isNaN(monthlyIncome) ||
+      Number.isNaN(savings)
+    ) {
       setError('Please enter valid numeric values for all fields.');
       return;
     }
 
-    updatePlayer({ creditScore, age, monthlyIncome, savings });
+    if (debtToIncomeRatio < 0 || debtToIncomeRatio > 100) {
+      setError('Debt-to-income ratio must be between 0 and 100.');
+      return;
+    }
+
+    updatePlayer({ creditScore, debtToIncomeRatio, monthlyIncome, savings });
     navigate('/game');
   }
 
@@ -39,8 +49,13 @@ export default function StartScreen() {
           <input name="creditScore" value={form.creditScore} onChange={handleChange} placeholder="e.g. 720" />
         </label>
         <label>
-          Age
-          <input name="age" value={form.age} onChange={handleChange} placeholder="e.g. 34" />
+          Debt-to-income ratio
+          <input
+            name="debtToIncomeRatio"
+            value={form.debtToIncomeRatio}
+            onChange={handleChange}
+            placeholder="e.g. 30%"
+          />
         </label>
         <label>
           Monthly income
