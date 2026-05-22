@@ -19,9 +19,11 @@ Key files
 - [src/game/scenes/sampleScene.js](src/game/scenes/sampleScene.js)
 - [src/components/Scene.js](src/components/Scene.js)
 - [src/components/Choice.js](src/components/Choice.js)
+ - [src/components/StartScreen.js](src/components/StartScreen.js)
 
 Next steps
 
 - Expand scenes in `src/game/scenes/` using `makeScene` and `makeChoice`.
 - Add persistence (localStorage) to `GameContext` and richer branching logic.
 - Replace placeholder copy with accurate steps for applying for a home loan.
+ - Expand the `StartScreen` form to collect additional borrower details and validation.
