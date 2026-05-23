@@ -25,6 +25,14 @@ export default function MortgageCalculator(){
     return decPart ? `${formattedInt}.${decPart}` : formattedInt;
   }
 
+  function rangeBackground(value, min = 0, max = 100, fill = '#2e8b57', empty = '#e0d6c1') {
+    const v = Number(value || 0);
+    const m = Number(min);
+    const M = Number(max);
+    const pct = M === m ? 0 : Math.max(0, Math.min(100, Math.round(((v - m) / (M - m)) * 100)));
+    return `linear-gradient(90deg, ${fill} ${pct}%, ${empty} ${pct}%)`;
+  }
+
   function calculate() {
     const price = toNumber(housePrice);
     const dp = toNumber(downPayment);
@@ -78,6 +86,7 @@ export default function MortgageCalculator(){
               value={toNumber(housePrice)}
               onChange={e=>setHousePrice(formatCurrencyInput(e.target.value))}
               className="slider"
+              style={{'--slider-track': rangeBackground(toNumber(housePrice), 0, 10000000)}}
             />
           </label>
 
@@ -92,6 +101,7 @@ export default function MortgageCalculator(){
               value={toNumber(downPayment)}
               onChange={e=>setDownPayment(formatCurrencyInput(e.target.value))}
               className="slider"
+              style={{'--slider-track': rangeBackground(toNumber(downPayment), 0, 10000000)}}
             />
           </label>
         </div>
@@ -108,6 +118,7 @@ export default function MortgageCalculator(){
               value={Number(interest) || 0}
               onChange={e=>setInterest(Number(e.target.value).toFixed(2))}
               className="slider"
+              style={{'--slider-track': rangeBackground(Number(interest) || 0, 0, 10)}}
             />
           </label>
 
@@ -122,6 +133,7 @@ export default function MortgageCalculator(){
               value={Number(term) || 0}
               onChange={e=>setTerm(e.target.value)}
               className="slider"
+              style={{'--slider-track': rangeBackground(Number(term) || 0, 0, 100)}}
             />
           </label>
         </div>
