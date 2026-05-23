@@ -14,9 +14,31 @@ export default function MortgageCalculator(){
     return Number.isFinite(n) ? n : 0;
   }
 
+  function formatCurrencyInput(val) {
+    if (val == null) return '';
+    const cleaned = String(val).replace(/[^0-9.]/g,'');
+    if (cleaned === '') return '';
+    const parts = cleaned.split('.');
+    const intPart = parts[0] || '0';
+    const decPart = parts[1] || '';
+    const formattedInt = Number(intPart).toLocaleString();
+    return decPart ? `${formattedInt}.${decPart}` : formattedInt;
+  }
+
   function calculate() {
     const price = toNumber(housePrice);
     const dp = toNumber(downPayment);
+
+    if (price <= 0) {
+      setResult({ error: 'Enter a valid house price.' });
+      return;
+    }
+
+    if (dp > price) {
+      setResult({ error: 'Down payment cannot exceed the house price.' });
+      return;
+    }
+
     const principal = Math.max(0, price - dp);
     const annualRate = toNumber(interest) / 100;
     const monthlyRate = annualRate / 12;
@@ -45,20 +67,62 @@ export default function MortgageCalculator(){
         <p className="calculator-sub">Enter an example house price and interest rate to estimate costs.</p>
 
         <div className="form-row">
-          <label>House Price
-            <input type="text" value={housePrice} onChange={e=>setHousePrice(e.target.value)} placeholder="e.g. 350000" />
+          <label>
+            House Price
+            <input type="text" value={housePrice} onChange={e=>setHousePrice(formatCurrencyInput(e.target.value))} placeholder="e.g. 350,000" />
+            <input
+              type="range"
+              min="0"
+              max="10000000"
+              step="1000"
+              value={toNumber(housePrice)}
+              onChange={e=>setHousePrice(formatCurrencyInput(e.target.value))}
+              className="slider"
+            />
           </label>
-          <label>Down Payment
-            <input type="text" value={downPayment} onChange={e=>setDownPayment(e.target.value)} placeholder="e.g. 35000" />
+
+          <label>
+            Down Payment
+            <input type="text" value={downPayment} onChange={e=>setDownPayment(formatCurrencyInput(e.target.value))} placeholder="e.g. 35,000" />
+            <input
+              type="range"
+              min="0"
+              max="10000000"
+              step="1000"
+              value={toNumber(downPayment)}
+              onChange={e=>setDownPayment(formatCurrencyInput(e.target.value))}
+              className="slider"
+            />
           </label>
         </div>
 
         <div className="form-row">
-          <label>Interest Rate (annual %)
+          <label>
+            Interest Rate (annual %)
             <input type="text" value={interest} onChange={e=>setInterest(e.target.value)} placeholder="e.g. 4.25" />
+            <input
+              type="range"
+              min="0"
+              max="10"
+              step="0.01"
+              value={Number(interest) || 0}
+              onChange={e=>setInterest(Number(e.target.value).toFixed(2))}
+              className="slider"
+            />
           </label>
-          <label>Term (years)
-            <input type="number" value={term} onChange={e=>setTerm(e.target.value)} min="1" />
+
+          <label>
+            Term (years)
+            <input type="number" value={term} onChange={e=>setTerm(e.target.value)} min="0" />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value={Number(term) || 0}
+              onChange={e=>setTerm(e.target.value)}
+              className="slider"
+            />
           </label>
         </div>
 
@@ -74,9 +138,9 @@ export default function MortgageCalculator(){
             ) : (
               <div>
                 <p><strong>Loan Amount:</strong> ${result.principal.toLocaleString()}</p>
-                <p><strong>Monthly Payment:</strong> ${result.monthly.toFixed(2)}</p>
-                <p><strong>Total Interest (over {result.months} months):</strong> ${result.totalInterest.toFixed(2)}</p>
-                <p><strong>Total Paid (including down payment):</strong> ${result.totalPayment.toFixed(2)}</p>
+                <p><strong>Monthly Payment:</strong> ${result.monthly.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</p>
+                <p><strong>Total Interest (over {result.months} months):</strong> ${result.totalInterest.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</p>
+                <p><strong>Total Paid (including down payment):</strong> ${result.totalPayment.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</p>
               </div>
             )}
           </div>

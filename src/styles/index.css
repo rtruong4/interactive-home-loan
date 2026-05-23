@@ -119,6 +119,9 @@ body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:
 .form-row input{padding:10px 12px;border-radius:10px;border:1px solid rgba(93,75,58,.12);background:#fff4e6}
 .calc-results{margin-top:18px;padding:14px;border-radius:12px;background:rgba(255,255,255,.6);border:1px solid rgba(182,143,64,.12)}
 
+.slider{width:100%;margin-top:8px}
+.slider-value{margin-top:6px;color:#5d4b3a;font-weight:700}
+
 /* No-qualify page styling */
 .no-qualify-screen{padding:32px}
 .no-qualify-container{max-width:760px;margin:0 auto;background:rgba(255,250,231,.96);border-radius:20px;padding:36px;box-shadow:0 18px 40px rgba(0,0,0,.16);border:1px solid rgba(182,143,64,.24)}
