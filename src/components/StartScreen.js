@@ -36,7 +36,11 @@ export default function StartScreen() {
     }
 
     updatePlayer({ creditScore, debtToIncomeRatio, monthlyIncome, savings });
-    navigate('/choose-loan');
+    if (creditScore < 500) {
+      navigate('/no-qualify');
+    } else {
+      navigate('/choose-loan');
+    }
   }
 
   return (

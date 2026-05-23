@@ -97,10 +97,13 @@ export default function DocumentChecklist() {
           )}
         </div>
 
-        <button 
-          className="primary-button" 
+        <button
+          className="primary-button"
           onClick={handleContinue}
           style={{ marginTop: '24px' }}
+          disabled={!allRequiredChecked}
+          aria-disabled={!allRequiredChecked}
+          title={!allRequiredChecked ? 'Please check all required documents to continue' : 'Continue'}
         >
           Continue Your Journey
         </button>
