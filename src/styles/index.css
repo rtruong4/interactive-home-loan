@@ -119,8 +119,18 @@ body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:
 .form-row input{padding:10px 12px;border-radius:10px;border:1px solid rgba(93,75,58,.12);background:#fff4e6}
 .calc-results{margin-top:18px;padding:14px;border-radius:12px;background:rgba(255,255,255,.6);border:1px solid rgba(182,143,64,.12)}
 
-.slider{width:100%;margin-top:8px}
+.slider{width:100%;margin-top:8px;appearance:none;-webkit-appearance:none;background:transparent;outline:none}
 .slider-value{margin-top:6px;color:#5d4b3a;font-weight:700}
+
+.calc-wand{flex:0 0 56px;width:56px;height:56px}
+/* Green track and potion thumb */
+.slider::-webkit-slider-runnable-track{height:8px;background:#2e8b57;border-radius:999px}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:36px;height:36px;margin-top:-14px;border-radius:50%;background-color:transparent;border:none;background-image:url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cpath%20d='M20%2010h24l-4%2018a12%2012%200%200%201-16%200z'%20fill='%23a3ffb0'%20stroke='%23000'%20stroke-width='1'/%3E%3Crect%20x='26'%20y='4'%20width='12'%20height='6'%20fill='%23c6862f'%20rx='1'/%3E%3C/svg%3E");background-size:contain;background-position:center;background-repeat:no-repeat}
+.slider:focus::-webkit-slider-runnable-track{box-shadow:0 0 0 4px rgba(46,139,87,0.12)}
+
+.slider::-moz-range-track{height:8px;background:#2e8b57;border-radius:999px}
+.slider::-moz-range-thumb{width:36px;height:36px;border-radius:50%;border:none;background-image:url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cpath%20d='M20%2010h24l-4%2018a12%2012%200%200%201-16%200z'%20fill='%23a3ffb0'%20stroke='%23000'%20stroke-width='1'/%3E%3Crect%20x='26'%20y='4'%20width='12'%20height='6'%20fill='%23c6862f'%20rx='1'/%3E%3C/svg%3E");background-size:contain;background-position:center;background-repeat:no-repeat}
+.slider:focus::-moz-range-track{box-shadow:0 0 0 4px rgba(46,139,87,0.12)}
 
 /* No-qualify page styling */
 .no-qualify-screen{padding:32px}

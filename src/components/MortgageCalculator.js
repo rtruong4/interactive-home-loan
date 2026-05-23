@@ -63,7 +63,7 @@ export default function MortgageCalculator(){
   return (
     <main className="scene calculator-screen">
       <div className="calculator-container">
-        <h1 className="calculator-title">Cost Calculator</h1>
+        <h1 className="calculator-title">Magic Mortgage Cost Calculator</h1>
         <p className="calculator-sub">Enter an example house price and interest rate to estimate costs.</p>
 
         <div className="form-row">
@@ -126,10 +126,15 @@ export default function MortgageCalculator(){
           </label>
         </div>
 
-        <div style={{marginTop:16}}>
-          <button className="primary-button" onClick={calculate} style={{marginRight:12}}>Calculate</button>
-          <button className="secondary-button" onClick={()=>navigate(-1)}>Back</button>
-        </div>
+          <div style={{marginTop:16,display:'flex',alignItems:'center',justifyContent:'center',gap:12}}>
+            <svg className="calc-wand" width="56" height="56" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <rect x="18" y="46" width="56" height="8" rx="4" transform="rotate(-24 18 46)" fill="#5A3E2B" />
+              <polygon points="70,18 78,30 62,30" fill="#F2D06F" stroke="#8b6d3f" strokeWidth="1.2" />
+              <circle cx="74" cy="24" r="4" fill="#ffd966" />
+            </svg>
+            <button className="primary-button" onClick={calculate} style={{marginRight:12}}>Calculate</button>
+            <button className="secondary-button" onClick={()=>navigate(-1)}>Back</button>
+          </div>
 
         {result && (
           <div className="calc-results">
