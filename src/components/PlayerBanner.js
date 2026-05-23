@@ -1,15 +1,8 @@
 import React from 'react';
 import { useGame } from '../context/GameContext';
-import { useNavigate } from 'react-router-dom';
 
 export default function PlayerBanner() {
-  const { player, clearPlayer } = useGame();
-  const navigate = useNavigate();
-
-  function handleClear() {
-    clearPlayer();
-    navigate('/');
-  }
+  const { player } = useGame();
 
   if (!player) return null;
 
@@ -22,9 +15,7 @@ export default function PlayerBanner() {
         <div><strong>Savings:</strong> {player.savings != null ? `$${player.savings}` : '—'}</div>
         <div><strong>Loan:</strong> {player.loanType ?? '—'}</div>
       </div>
-      <div className="player-actions">
-        <button className="clear-player" onClick={handleClear}>Clear data</button>
-      </div>
+      
     </aside>
   );
 }
