@@ -35,6 +35,11 @@ export default function StartScreen() {
       return;
     }
 
+    if (creditScore < 300 || creditScore > 850) {
+      setError('Credit score must be between 300 and 850.');
+      return;
+    }
+
     updatePlayer({ creditScore, debtToIncomeRatio, monthlyIncome, savings });
     if (creditScore < 500) {
       navigate('/no-qualify');
