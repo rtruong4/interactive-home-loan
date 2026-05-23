@@ -60,7 +60,7 @@ body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:
 /* Loan choice / fork styling */
 .loan-choice-screen{padding:36px}
 .loan-choices{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;position:relative;max-width:900px;margin:0 auto}
-.loan-choice-title{grid-column:1/-1;margin:0 0 18px;color:#4a2f17;font-size:2rem;font-weight:800;text-align:center;letter-spacing:.04em}
+.loan-choice-title{grid-column:1/-1;margin:0 0 18px;color:#cec4bb;font-size:2rem;font-weight:800;text-align:center;letter-spacing:.04em}
 .loan-card{position:relative;z-index:1;background:#c89f67;padding:28px 22px 22px;border-radius:28px 28px 18px 18px;border:1px solid rgba(64,42,18,.22);box-shadow:0 18px 40px rgba(0,0,0,.22);overflow:hidden}
 .loan-card::before{content:'';position:absolute;top:0;left:50%;width:140%;height:60%;transform:translateX(-50%);background:rgba(255,255,255,.12);border-bottom-left-radius:80px 130px;border-bottom-right-radius:80px 130px;}
 .loan-card::after{content:'';position:absolute;right:22px;top:50%;width:14px;height:14px;background:radial-gradient(circle,#f9d87d,#b77b2f 65%);border:3px solid rgba(93,75,58,.35);border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.18);transform:translateY(-50%)}
