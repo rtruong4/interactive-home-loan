@@ -13,6 +13,11 @@ import sampleScene from './game/scenes/sampleScene';
 function App() {
   return (
     <BrowserRouter>
+      <header className="app-header">
+        <div className="app-header-inner">
+          <h1 className="app-title">The Loan Quest</h1>
+        </div>
+      </header>
       <GameProvider initialScene={sampleScene}>
         <PlayerBanner />
         <Routes>

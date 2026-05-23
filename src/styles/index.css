@@ -1,6 +1,9 @@
 :root{--bg:#12100e;--card:#f3e8d2;--accent:#b68f40;--text:#2f2418;--muted:#5d4b3a;--panel:#fdf4e6}
-body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:radial-gradient(circle at top,#7a5a39 0%,#4f3621 45%,#312015 100%);margin:0;color:var(--text);min-height:100vh;cursor:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg transform='rotate(-18 16 16)'%3E%3Crect x='14' y='8' width='4' height='16' rx='2' fill='%238b5f2c'/%3E%3Cpath d='M16 2 L18 6 L22 7 L18 8 L16 12 L14 8 L10 7 L14 6 Z' fill='%23ffd966' stroke='%238b5f2c' stroke-width='1'/%3E%3Ccircle cx='16' cy='6' r='2' fill='%23fff5b5'/%3E%3C/g%3E%3C/svg%3E") 16 2, auto;}
+body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:radial-gradient(circle at top,#7a5a39 0%,#4f3621 45%,#312015 100%);margin:0;color:var(--text);min-height:100vh;padding-top:84px;cursor:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg transform='rotate(-18 16 16)'%3E%3Crect x='14' y='8' width='4' height='16' rx='2' fill='%238b5f2c'/%3E%3Cpath d='M16 2 L18 6 L22 7 L18 8 L16 12 L14 8 L10 7 L14 6 Z' fill='%23ffd966' stroke='%238b5f2c' stroke-width='1'/%3E%3Ccircle cx='16' cy='6' r='2' fill='%23fff5b5'/%3E%3C/g%3E%3C/svg%3E") 16 2, auto;}
 .scene{max-width:980px;margin:40px auto;padding:0;background:transparent}
+.app-header{position:fixed;top:0;left:0;right:0;height:64px;background:linear-gradient(135deg,#a9782a,#6b4a20);display:flex;align-items:center;justify-content:center;z-index:2000;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.app-header-inner{max-width:980px;width:100%;padding:10px 20px}
+.app-title{margin:0;color:#fff;font-family:Georgia,serif;font-size:1.4rem;letter-spacing:0.06em}
 .story-screen{padding:28px}
 .story-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:start}
 .story-grid .character-panel{background:linear-gradient(180deg,#fff6dc 0%,#f3e5c1 100%);border:2px solid rgba(182,143,64,.3);border-radius:28px;padding:28px;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.22)}
