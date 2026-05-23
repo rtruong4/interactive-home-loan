@@ -14,11 +14,11 @@ export default function NoQualify(){
   return (
     <main className="scene no-qualify-screen">
       <div className="no-qualify-container">
-        <h1 className="no-qualify-title"> Unfortunately, you do not qualify for a home loan</h1>
+        <h1 className="no-qualify-title"> 🧌 Unfortunately, you do not qualify for a home loan 🧌</h1>
         <p className="no-qualify-message">Based on a credit score of {player?.creditScore ?? '—'}, you currently fall below the minimum threshold for most mortgage products.</p>
 
         <div className="resources">
-          <h2>Resources to improve your credit score</h2>
+          <h2>Resources to improve your credit score 🧚</h2>
           <ul>
             <li>Review your credit report for errors and dispute any inaccuracies.</li>
             <li>Pay down outstanding balances, focusing on high-interest credit cards.</li>
