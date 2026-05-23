@@ -13,16 +13,21 @@ export default function SceneView() {
   );
 
   return (
-    <main className="scene">
-      <h1>{scene.title}</h1>
-      <p>{scene.body}</p>
+    <main className="scene game-scene">
+      <div className="scene-header">
+        <div className="scene-badge">Chapter</div>
+        <h1>{scene.title}</h1>
+      </div>
+      <div className="scene-body">
+        <p>{scene.body}</p>
+      </div>
       <div className="choices">
         {scene.choices.map((c, i) => (
           <Choice key={i} choice={c} onChoose={() => choose(c)} />
         ))}
       </div>
       <div className="controls">
-        <button onClick={restart}>Restart</button>
+        <button className="secondary-button" onClick={restart}>Return to Start</button>
       </div>
     </main>
   );

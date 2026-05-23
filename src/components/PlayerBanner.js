@@ -20,6 +20,7 @@ export default function PlayerBanner() {
         <div><strong>Income:</strong> {player.monthlyIncome != null ? `$${player.monthlyIncome}` : '—'}</div>
         <div><strong>DTI:</strong> {player.debtToIncomeRatio != null ? `${player.debtToIncomeRatio}%` : '—'}</div>
         <div><strong>Savings:</strong> {player.savings != null ? `$${player.savings}` : '—'}</div>
+        <div><strong>Loan:</strong> {player.loanType ?? '—'}</div>
       </div>
       <div className="player-actions">
         <button className="clear-player" onClick={handleClear}>Clear data</button>

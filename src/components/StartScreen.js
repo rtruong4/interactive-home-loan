@@ -36,40 +36,53 @@ export default function StartScreen() {
     }
 
     updatePlayer({ creditScore, debtToIncomeRatio, monthlyIncome, savings });
-    navigate('/game');
+    navigate('/choose-loan');
   }
 
   return (
-    <main className="scene">
-      <h1>Start: Your Financial Snapshot</h1>
-      <p>Enter a few details so the game can tailor guidance.</p>
-      <form onSubmit={handleSubmit} className="start-form">
-        <label>
-          Credit score
-          <input name="creditScore" value={form.creditScore} onChange={handleChange} placeholder="e.g. 720" />
-        </label>
-        <label>
-          Debt-to-income ratio
-          <input
-            name="debtToIncomeRatio"
-            value={form.debtToIncomeRatio}
-            onChange={handleChange}
-            placeholder="e.g. 30%"
-          />
-        </label>
-        <label>
-          Monthly income
-          <input name="monthlyIncome" value={form.monthlyIncome} onChange={handleChange} placeholder="e.g. 5000" />
-        </label>
-        <label>
-          Savings
-          <input name="savings" value={form.savings} onChange={handleChange} placeholder="e.g. 20000" />
-        </label>
-        {error && <div className="error">{error}</div>}
-        <div style={{ marginTop: 12 }}>
-          <button type="submit">Start the journey</button>
-        </div>
-      </form>
+    <main className="scene story-screen">
+      <div className="story-grid">
+        <section className="character-panel">
+          <div className="character-avatar">🧙‍♂️</div>
+          <div className="speech-bubble">
+            <p>Greetings, traveler. I am Fizzlewig the wizard gnome.</p>
+            <p>Share your financial tale and I shall help you navigate the home loan quest.</p>
+          </div>
+        </section>
+        <section className="start-panel">
+          <div className="start-panel__header">
+            <div>
+              <h1>Step into the Loan Keep</h1>
+              <p>Provide your details below, and the ancient scrolls will reveal your path.</p>
+            </div>
+          </div>
+          <form onSubmit={handleSubmit} className="start-form">
+            <label>
+              Credit score
+              <input name="creditScore" value={form.creditScore} onChange={handleChange} placeholder="e.g. 720" />
+            </label>
+            <label>
+              Debt-to-income ratio
+              <input
+                name="debtToIncomeRatio"
+                value={form.debtToIncomeRatio}
+                onChange={handleChange}
+                placeholder="0 - 100"
+              />
+            </label>
+            <label>
+              Monthly income
+              <input name="monthlyIncome" value={form.monthlyIncome} onChange={handleChange} placeholder="e.g. 5000" />
+            </label>
+            <label>
+              Savings
+              <input name="savings" value={form.savings} onChange={handleChange} placeholder="e.g. 20000" />
+            </label>
+            {error && <div className="error">{error}</div>}
+            <button type="submit" className="primary-button">Start the journey</button>
+          </form>
+        </section>
+      </div>
     </main>
   );
 }
