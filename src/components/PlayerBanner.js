@@ -35,6 +35,8 @@ export default function PlayerBanner() {
         </div>
         <div className="progress-track" aria-hidden="true">
           <div className="progress-fill" style={{ width: `${progress}%` }} />
+          <span className="progress-thumb" style={{ left: `${progress}%` }} role="img" aria-label="wizard">🧙‍♂️</span>
+          <span className="progress-house" role="img" aria-label="house">🏠</span>
         </div>
         <div className="progress-steps">
           {progressSteps.map((step, index) => (
