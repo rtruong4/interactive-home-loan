@@ -88,3 +88,17 @@ body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:
 .checklist-status{margin:24px 0;padding:16px 18px;border-radius:14px;background:linear-gradient(135deg,rgba(182,143,64,.1),rgba(182,143,64,.05));border:1px solid rgba(182,143,64,.2);text-align:center}
 .status-complete{margin:0;color:#4a7f2f;font-weight:700;font-size:1.05rem}
 .status-incomplete{margin:0;color:#5d4b3a;font-size:1rem}
+
+/* Next steps page styling */
+.next-steps-screen{padding:32px}
+.next-steps-container{max-width:800px;margin:0 auto;background:rgba(255,250,231,.96);border-radius:28px;padding:48px;box-shadow:0 18px 40px rgba(0,0,0,.16);border:1px solid rgba(182,143,64,.24)}
+.next-steps-title{margin:0 0 16px;color:#4a2f17;font-size:2.4rem;font-weight:800;text-align:center}
+.completion-badge{display:inline-block;margin:0 auto 24px;padding:12px 20px;background:linear-gradient(135deg,#c3881b,#7f5a22);color:#fff;border-radius:999px;font-weight:700;text-align:center;width:fit-content}
+.next-steps-content{text-align:center}
+.next-steps-message{color:#5d4b3a;font-size:1.1rem;line-height:1.7;margin-bottom:28px}
+.info-section,.tips-section{text-align:left;margin:28px 0;padding:20px;background:rgba(255,255,255,.5);border-radius:16px;border:1px solid rgba(182,143,64,.12)}
+.info-section h2,.tips-section h2{margin:0 0 12px;color:#5b3f1d;font-size:1.2rem}
+.info-section p,.tips-section p{margin:0 0 16px;color:#4a3b2d;line-height:1.6}
+.resources-list,.tips-list{margin:0;padding:0 0 0 24px;list-style:disc}
+.resources-list li,.tips-list li{margin-bottom:10px;color:#3f2a14;line-height:1.6}
+.closing-message{color:#5d4b3a;font-size:1.05rem;line-height:1.7;margin-top:24px;font-style:italic}

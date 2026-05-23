@@ -1,29 +1,11 @@
-# interactive-home-loan
-
-This repository contains a minimal Create React App scaffold for an interactive story game that teaches users how to apply for a home loan.
-
-Quick start
-
-Install dependencies and run locally:
-
-```bash
+## Game Concept
+This project will cover the process of applying for a loan. Specifically it will educate the player on the difference between an FHA and a conventional loan. It will also give the player a checklist of items they need before applying for a loan. The game will generally represent an interactive text adventure style game. The play does not control a character, however the game will seem to give the player choices in their "adventure". Ideally, after playing through the experience, the player will understand certain loan types and which ones are the best for them. Along with this, the user will ideally get a better idea of what they need in order to apply for a loan. I tried to make the experience fun through making it an "adventure" rather than just text information. I included medieval magic themes to take the user out of the more "boring" loan application process. 
+## How to Run Locally
 npm install
 npm start
-```
-
-Key files
-
-- [src/App.js](src/App.js)
-- [src/context/GameContext.js](src/context/GameContext.js)
-- [src/game/StoryEngine.js](src/game/StoryEngine.js)
-- [src/game/scenes/sampleScene.js](src/game/scenes/sampleScene.js)
-- [src/components/Scene.js](src/components/Scene.js)
-- [src/components/Choice.js](src/components/Choice.js)
- - [src/components/StartScreen.js](src/components/StartScreen.js)
-
-Next steps
-
-- Expand scenes in `src/game/scenes/` using `makeScene` and `makeChoice`.
-- Add persistence (localStorage) to `GameContext` and richer branching logic.
-- Replace placeholder copy with accurate steps for applying for a home loan.
- - Expand the `StartScreen` form to collect additional borrower details and validation.
+## Tech Choices
+I chose to use Create React as I am most familiar with it for app building. 
+## What I'd Do With More Time
+I would love to be able to user Phaser and add more interactive animations to make the game even more "game like".
+## Known Issues
+N/A

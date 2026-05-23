@@ -19,7 +19,7 @@ export default function DocumentChecklist() {
   }
 
   function handleContinue() {
-    navigate('/game');
+    navigate('/next-steps');
   }
 
   const allRequiredChecked = checked.identity && checked.income && checked.assets;
