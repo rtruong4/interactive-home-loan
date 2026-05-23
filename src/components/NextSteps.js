@@ -51,13 +51,20 @@ export default function NextSteps() {
           </p>
         </div>
 
-        <button 
-          className="primary-button" 
-          onClick={handleRestart}
-          style={{ marginTop: '24px' }}
-        >
-          Start a New Adventure
-        </button>
+        <div style={{display:'flex',gap:12,justifyContent:'center',marginTop:24}}>
+          <button 
+            className="secondary-button" 
+            onClick={() => navigate('/calculator')}
+          >
+            Open Cost Calculator
+          </button>
+          <button 
+            className="primary-button" 
+            onClick={handleRestart}
+          >
+            Start a New Adventure
+          </button>
+        </div>
       </div>
     </main>
   );

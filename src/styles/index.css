@@ -100,3 +100,13 @@ body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:
 .resources-list,.tips-list{margin:0;padding:0 0 0 24px;list-style:disc}
 .resources-list li,.tips-list li{margin-bottom:10px;color:#3f2a14;line-height:1.6}
 .closing-message{color:#5d4b3a;font-size:1.05rem;line-height:1.7;margin-top:24px;font-style:italic}
+
+/* Calculator styling */
+.calculator-screen{padding:28px}
+.calculator-container{max-width:720px;margin:0 auto;background:rgba(255,250,231,.96);border-radius:20px;padding:28px;box-shadow:0 18px 40px rgba(0,0,0,.16);border:1px solid rgba(182,143,64,.24)}
+.calculator-title{margin:0 0 10px;color:#4a2f17;font-size:1.8rem}
+.calculator-sub{margin:0 0 18px;color:#5d4b3a}
+.form-row{display:flex;gap:12px}
+.form-row label{flex:1;display:flex;flex-direction:column;gap:8px}
+.form-row input{padding:10px 12px;border-radius:10px;border:1px solid rgba(93,75,58,.12);background:#fff4e6}
+.calc-results{margin-top:18px;padding:14px;border-radius:12px;background:rgba(255,255,255,.6);border:1px solid rgba(182,143,64,.12)}
