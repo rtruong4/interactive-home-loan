@@ -20,7 +20,7 @@ export default function NextSteps() {
           <div className="completion-badge">✨ Quest Complete ✨</div>
           
           <p className="next-steps-message">
-            Congratulations! You have gathered all the required information for your {player?.loanType || 'loan'} application.
+            Congratulations! You have gathered all the required information for your {player?.loanType} loan application.
           </p>
 
           <div className="info-section">
