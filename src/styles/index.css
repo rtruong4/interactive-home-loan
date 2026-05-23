@@ -40,8 +40,8 @@ body{font-family:Georgia,serif,Palatino,Liberation Serif,Times,serif;background:
 .secondary-button{border:none;padding:14px 20px;border-radius:18px;background:rgba(115, 81, 43, 0.12);color:#3f2a14;font-size:0.98rem;cursor:pointer;box-shadow:0 10px 18px rgba(165, 102, 30, 0.12);transition:transform .2s ease}
 .secondary-button:hover{transform:translateY(-2px);filter:brightness(1.08)}
 
-.player-banner{display:flex;flex-direction:column;align-items:stretch;gap:18px;max-width:720px;margin:18px auto;padding:20px;background:rgba(255,250,231,.96);border-radius:22px;box-shadow:0 14px 32px rgba(0,0,0,.15);border:1px solid rgba(182,143,64,.24)}
-.player-banner::before{content:'✨';font-size:24px;margin-right:10px}
+.player-banner{display:flex;flex-direction:column;align-items:stretch;gap:18px;max-width:720px;margin:18px auto;padding:20px;background:rgba(255,250,231,.96);border-radius:22px;box-shadow:0 14px 32px rgba(0,0,0,.15);border:1px solid rgba(182,143,64,.24);position:relative}
+.player-banner::before{content:'✨ Player Stats';font-size:1rem;font-weight:700;color:#4a2f17;position:absolute;top:-12px;left:20px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.95);border:1px solid rgba(182,143,64,.18);box-shadow:0 8px 16px rgba(0,0,0,.08)}
 .player-info{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;font-size:14px;color:#3a2d1f}
 .player-info div{background:rgba(255,250,231,.9);padding:6px 10px;border-radius:12px;border:1px solid rgba(182,143,64,.16)}
 .progress-tracker{display:flex;flex-direction:column;gap:10px;padding:0 6px}

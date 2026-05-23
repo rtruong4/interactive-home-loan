@@ -15,7 +15,9 @@ export default function PlayerBanner() {
 
   if (!player) return null;
 
-  const currentIndex = progressSteps.findIndex(step => step.path === location.pathname);
+  // Treat the calculator as part of the final step so progress shows 100% there
+  const pathForProgress = location.pathname === '/calculator' ? '/next-steps' : location.pathname;
+  const currentIndex = progressSteps.findIndex(step => step.path === pathForProgress);
   const activeIndex = currentIndex >= 0 ? currentIndex : 0;
   const progress = (activeIndex / (progressSteps.length - 1)) * 100;
 
